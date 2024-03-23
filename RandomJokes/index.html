@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Jokes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="glitch.css">
+</head>
+
+<body class="flex">
+    <header>
+        <div class="glitch-wrapper">
+            <h1 class="glitch">Joke Generator</h1>
+        </div>
+    </header>
+
+
+
+
+    <section class="flex form-sec glassmorphismEffect">
+        <h2>What type of joke you want to generate</h2>
+        <form class="flex" id="jokeForm">
+            <label for="subcategory" id="Type" class="flex">Type</label>
+            <select name="subcategory" id="subcategory">
+                <option value="Any">Random</option>
+                <option value="Programming">Programming</option>
+                <option value="Misc">Misc</option>
+                <option value="Dark">Dark</option>
+                <option value="Pun">Pun</option>
+            </select>
+        </form>
+
+        <button onclick="main();" id="joke-btn">Generate</button>
+    </section>
+
+
+    <section class="flex generation">
+        <div id="jokeText" class="flex glassmorphismEffect">
+            Generated Joke will come here
+        </div>
+
+    </section>
+
+    <footer>
+        Made using jokeAPI
+    </footer>
+
+    <!--script attacted -->
+    <script src="script.js"></script>
+</body>
+
+</html>

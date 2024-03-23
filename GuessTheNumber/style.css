@@ -1,0 +1,90 @@
+body {
+    background-color: black;
+    color: white;
+    flex-direction: column;
+}
+
+#inputNumber {
+    height: 20px;
+    margin-bottom: 10px;
+    border-radius:5px;
+}
+
+#checkNumber {
+    background-color: blue;
+    border-radius: 5px;
+    border: none;
+    width: 65px;
+    height: 28px;
+    font-size: 17px;
+    transition: all;
+    cursor: pointer;
+}
+
+#checkNumber:active {
+    transform: scale(1.1);
+}
+
+label{
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+#number{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border-top: 2px solid red;
+    animation: load 1s linear infinite;
+    
+    filter: blur(3.5px);
+    
+    position: relative;
+    top: -10px;
+}
+
+#ans{
+    padding: 0px 5px;
+    height: 25px;
+    /* border: 2px solid #fff; */
+    margin: 10px;
+    border-radius:5px;
+    background-color: red;
+    display: none;
+    
+    position: absolute;
+    top: 150px;
+    animation: sl 1s linear infinite ;
+    
+}
+
+.flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sep{
+    flex-direction: column;
+    margin-top: 60px;
+}
+
+@keyframes load {
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes sl {
+    0%{
+        transform: scale(0.9);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(1.1);
+    }
+
+
+}
