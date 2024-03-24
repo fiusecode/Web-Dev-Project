@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .flex {
+            display: flex;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        #password,
+        #pl {
+            width: 300px;
+            height: 40px;
+            border-radius: 10px;
+            margin-top: 50px;
+            font-size: 20px;
+            padding-inline: 15px;
+
+        }
+
+        #pl {
+            width: 100px;
+        }
+
+        #gp {
+            margin: 20px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .length label {
+            font-size: 15px;
+            padding: 8px;
+            margin-right: 40px;
+            border: 2px solid grey;
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body class="flex">
+    <h1>Password Generator</h1>
+    <span class="length"><label for="pl">Password Length</label>
+        <input type="number" name="pl" id="pl"></span>
+    <input type="text" name="password" id="password">
+    <button id="gp" onclick="main()">Generate Password</button>
+
+
+
+    <script>
+        function generatePassword(length) {
+            var charset = "abcdefghijklmnopqrstuvwxyz!@#$%^&*()_+{}[]|?><ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var password = "";
+            for (var i = 0; i < length; i++) {
+                var randomIndex = Math.floor(Math.random() * charset.length);
+                password += charset[randomIndex];
+            }
+            return password;
+        }
+
+        let passinput = document.getElementById("password");
+
+
+        function main() {
+            let length = document.getElementById("pl");
+            let password = generatePassword(length.value);
+            passinput.value = password;
+        }
+
+    </script>
+</body>
+
+</html>
